@@ -1,0 +1,112 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background-color 0.5s, color 0.5s;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+}
+
+.countdown-container {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  transition: background 0.5s, box-shadow 0.5s;
+}
+
+/* Timer display */
+.timer {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.timer span.number {
+  font-size: 3rem;
+  min-width: 60px;
+  display: inline-block;
+  font-weight: bold;
+  color: #ff6f61;
+  animation: pop 0.5s ease;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 0.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+  body {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    color: #333;
+  }
+
+  .countdown-container {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .timer span.number {
+    color: #ff6f61;
+  }
+
+  .label {
+    color: #333;
+  }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #232526, #414345);
+    color: #f1f1f1;
+  }
+
+  .countdown-container {
+    background: rgba(40, 40, 40, 0.5);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  }
+
+  .timer span.number {
+    color: #00c3ff;
+  }
+
+  .label {
+    color: #ccc;
+  }
+}
+
+/* Number change pop animation */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+h1{
+  color: rgb(34, 212, 34);
+}
